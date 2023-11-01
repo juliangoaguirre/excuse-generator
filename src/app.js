@@ -8,7 +8,7 @@ import "./assets/img/4geeks.ico";
 window.onload = function() {
   //write your code here
   console.log("Hello Rigo from the console!");
-  let excuse = document.getElementById("excuse");
+  let excuseArea = document.getElementById("excuseArea");
   let who = ["The dog", "My grandma", "His turtle", "My bird"];
   let action = ["ate", "peed", "crushed", "broke"];
   let what = ["my homework", "the keys", "the car"];
@@ -20,17 +20,16 @@ window.onload = function() {
     "while I was praying"
   ];
 
-  let whorandom = Math.floor(Math.random() * who.length);
-  let actionrandom = Math.floor(Math.random() * action.length);
-  let whatrandom = Math.floor(Math.random() * what.length);
-  let whenrandom = Math.floor(Math.random() * when.length);
+  function generateRandomNum(array) {
+    return Math.floor(Math.random() * array.length);
+  }
 
-  excuse.innerHTML =
-    who[whorandom] +
+  excuseArea.innerHTML =
+    who[generateRandomNum(who)] +
     " " +
-    action[actionrandom] +
+    action[generateRandomNum(action)] +
     " " +
-    what[whatrandom] +
+    what[generateRandomNum(what)] +
     " " +
-    when[whenrandom];
+    when[generateRandomNum(when)];
 };
